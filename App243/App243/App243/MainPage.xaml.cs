@@ -28,8 +28,8 @@ namespace App243
             Task.Run (async () => {
 
                 var newPosts = new Setting() { Key = "123", Value = "test" };
-                await context.Setting.AddRangeAsync(newPosts);
-                await context.SaveChangesAsync();
+                context.Setting.Add(newPosts);
+
 
                 var result = context.Setting.Where(X => X.Key == "123").FirstOrDefault();
 
